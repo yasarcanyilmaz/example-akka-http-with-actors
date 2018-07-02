@@ -5,12 +5,12 @@ import spray.json._
 
 case class IncomingRequest(name: String, id: Int)
 
-object IncomingRequestProtocol extends DefaultJsonProtocol {
-  implicit val incomingJsonFormat: RootJsonFormat[IncomingRequest] = jsonFormat2(IncomingRequest)
+object IncomingRequest extends DefaultJsonProtocol {
+  implicit val incomingJsonFormat: RootJsonFormat[IncomingRequest] = jsonFormat2(IncomingRequest.apply)
 }
 
 case class OutGoingResponse(name: String)
 
-object OutGoingResponseProtocol extends DefaultJsonProtocol {
-  implicit val outgoingResponseFormat: RootJsonFormat[OutGoingResponse] = jsonFormat1(OutGoingResponse)
+object OutGoingResponse extends DefaultJsonProtocol {
+  implicit val outgoingResponseFormat: RootJsonFormat[OutGoingResponse] = jsonFormat1(OutGoingResponse.apply)
 }
